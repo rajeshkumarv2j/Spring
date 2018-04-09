@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- In spring, p-namespace is the XML short cut to inject dependency in
+	bean. p-namespace replaces
+	<property>
+		tag of XML. p-namespace has no XSD definition and it only exits in
+		core of spring. We can directly assign the attribute name of the class
+		with p-namespace within bean tag. We can use p-namespace in place of
+		<property>
+			tag in spring XML. It is easier and clear to use that will increase
+			readability of spring XML application context. --> 
+			
+			
+<bean id="FileNameGenerator" class="com.mkyong.common.FileNameGenerator">
+		<property name="name">
+			<value>mkyong</value>
+		</property>
+		<property name="type">
+			<value>txt</value>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="FileNameGenerator1" class="com.mkyong.common.FileNameGenerator">
+		<property name="name" value="mkyong" />
+		<property name="type" value="txt" />
+	</bean>
+	
+	<bean id="FileNameGenerator2" class="com.mkyong.common.FileNameGenerator"  p:name="mkyong" p:type="txt" />
+             
+</beans>
