@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+    //default constructor
+    AppConfig(){
+    }
     @Bean
     @Conditional(LocaleConditionUSA.class)
     public MyService myBeanA () {
